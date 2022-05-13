@@ -1,7 +1,7 @@
 let userAdmin;
 let condition = false;
-let msj;
 do{
+    let msj = false;
     if(userAdmin === "" || userAdmin === undefined){
         userAdmin = prompt('Por favor ingrese su nombre.');
     }else if(userAdmin === null){
@@ -13,9 +13,7 @@ do{
     }else{
         userAdmin = prompt(`Ingrese otro usuario, ${userAdmin} no posee privilegios.`);
     }
-}while(condition == false);
-if(condition){
-    console.log(msj);
-}else{
-    console.log('Lo sentimos, no podemos continuar');
-}
+    if(msj){
+        console.log(msj);
+    }
+}while(!condition);
